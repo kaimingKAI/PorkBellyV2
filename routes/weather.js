@@ -18,7 +18,9 @@ weatherRouter.get("/cityID",(req,res) => {
     })
     .then(data => {
         res.json({
-            result:"查询到的城市： "+data["location"][0]['country']+data["location"][0]['adm1']+data["location"][0]['name']+"--对应城市ID： "+data["location"][0]['id']
+            result:"查询到的城市： "+data["location"][0]['country']+data["location"][0]['adm1']+data["location"][0]['name']+"--对应城市ID： "+data["location"][0]['id'],
+            id:["location"][0]['id'],
+            city:["location"][0]['name']
         })
     })
     .catch(error => console.log(error))
